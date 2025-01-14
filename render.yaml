@@ -1,0 +1,20 @@
+# Exported from Render on 2025-01-14T04:49:28Z
+services:
+- type: web
+  name: ecommerce_project
+  runtime: python
+  repo: https://github.com/Manish-Kumar-Kamat/ecommerce_project
+  plan: free
+  envVars:
+  - key: version
+    sync: false
+  - key: include-system-site-packages
+    sync: false
+  - key: home
+    sync: false
+  - key: PYTHON_VERSION
+    sync: false
+  region: oregon
+  buildCommand: './build.sh  '
+  startCommand: gunicornx Ecommerce.wsgi.application
+version: "1"
